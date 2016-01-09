@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Customer OnBoard</string>
+    <string name="valueAadhar">Aadhar Number</string>
+    <string name="or">OR</string>
+    <string name="valuePassport">Passport Number</string>
+    <string name="passportHint">Enter passport number</string>
+    <string name="altcontnumber">Enter alternative number</string>
+    <string name="emailHint">Enter email address</string>
+    <string name="checkDetails">CHECK DETAILS</string>
+    <string name="action_settings">Settings</string>
+
+
+
+</resources>

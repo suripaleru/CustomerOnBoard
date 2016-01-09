@@ -1,0 +1,15 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="labelTextSize">20sp</dimen>
+    <dimen name="valueTextSize">20sp</dimen>
+    <dimen name="layoutMarginBottom">20dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="aadharMarginTop">20dp</dimen>
+    <dimen name="aadharEditTextMargin">10dp</dimen>
+    <dimen name="aadharEditTextMarginRight">3dp</dimen>
+    <dimen name="passportMargin">10dp</dimen>
+
+</resources>
