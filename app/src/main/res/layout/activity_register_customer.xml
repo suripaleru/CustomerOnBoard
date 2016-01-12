@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.surendra535268.customeronboard.RegisterCustomerActivity"
-    android:background="@color/transparent">
+    android:background="#f0f0f0">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,217 +17,264 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:orientation="vertical">
 
+
             <LinearLayout
-                android:id="@+id/layoutAadhar"
-                android:background="@drawable/register_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/layoutMarginBottom"
+                android:background="@drawable/register_layout"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:id="@+id/imgIndia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/imgOthers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_layout"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/labelAadhar"
+                <LinearLayout
+                    android:id="@+id/layoutAadhar"
+                    android:background="@drawable/register_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/labelTextSize"
-                    android:text="@string/valueAadhar"
-                    android:gravity="center"
-                    android:layout_margin="@dimen/margin"
-                    android:textStyle="bold"/>
+                    android:layout_marginTop="@dimen/layoutMarginTop"
+                    android:layout_marginLeft="@dimen/layoutMarginLeft"
+                    android:layout_marginRight="@dimen/layoutMarginRight"
+                    android:layout_marginBottom="@dimen/layoutMarginBottom"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/labelAadhar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/labelTextSize"
+                        android:text="@string/valueAadhar"
+                        android:gravity="center"
+                        android:layout_margin="@dimen/margin"
+                        android:textStyle="bold"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/aadharEditTextMargin"
+                        android:weightSum="3"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_marginRight="@dimen/aadharEditTextMarginRight"
+                            android:gravity="center"
+                            android:background="@drawable/edit_layout_box">
+
+                            <EditText
+                                android:id="@+id/editAadharPart1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginRight="@dimen/aadharEditTextMarginRight"
+                            android:background="@drawable/edit_layout_box">
+
+                            <EditText
+                                android:id="@+id/editAadharPart5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:background="@drawable/edit_layout_box">
+
+                            <EditText
+                                android:id="@+id/editAadharPart9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                            <EditText
+                                android:id="@+id/editAadharPart12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="1"
+                                android:inputType="number"
+                                android:textSize="@dimen/valueTextSize"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutSSN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:id="@+id/editSSN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/valueTextSize"
+                        android:inputType="number"
+                        android:hint="@string/ssnHint"
+                        android:padding="@dimen/margin"
+                        android:gravity="center"
+                        android:layout_margin="@dimen/ssnEditTextMargin"
+                        android:background="@drawable/edit_layout_box"/>
+
+                </LinearLayout>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_margin="@dimen/aadharEditTextMargin"
-                    android:weightSum="3"
-                    android:baselineAligned="false">
+                    android:layout_marginLeft="@dimen/layoutMarginLeft"
+                    android:layout_marginRight="@dimen/layoutMarginRight"
+                    android:weightSum="3">
 
-                    <LinearLayout
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:background="@color/colorAccent"/>
+
+                    <TextView
+                        android:id="@+id/textviewOR"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_weight="1"
-                        android:layout_marginRight="@dimen/aadharEditTextMarginRight"
+                        android:textSize="@dimen/valueTextSize"
+                        android:text="@string/or"
                         android:gravity="center"
-                        android:background="@drawable/edit_layout_box">
+                        android:textColor="@color/colorAccent"/>
 
-                        <EditText
-                            android:id="@+id/editAadharPart1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                    </LinearLayout>
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorAccent"
+                        android:layout_weight="1"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutPassport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_marginLeft="@dimen/layoutMarginLeft"
+                    android:layout_marginRight="@dimen/layoutMarginRight"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editPassport"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="1"
+                        android:textSize="@dimen/valueTextSize"
+                        android:inputType="text"
+                        android:hint="@string/passportHint"
+                        android:padding="@dimen/margin"
                         android:gravity="center"
-                        android:layout_marginRight="@dimen/aadharEditTextMarginRight"
-                        android:background="@drawable/edit_layout_box">
+                        android:layout_marginTop="@dimen/margin"
+                        android:layout_marginBottom="@dimen/margin"
+                        android:background="@drawable/edit_layout_box"/>
 
-                        <EditText
-                            android:id="@+id/editAadharPart5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:background="@drawable/edit_layout_box">
-
-                        <EditText
-                            android:id="@+id/editAadharPart9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                        <EditText
-                            android:id="@+id/editAadharPart12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:maxLength="1"
-                            android:inputType="number"
-                            android:textSize="@dimen/valueTextSize"/>
-                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3">
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="2dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:background="#ffffff" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/valueTextSize"
-                    android:text="@string/or"
-                    android:gravity="center"
-                    android:textColor="@color/colorAccent"/>
-
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:background="#ffffff"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layoutPassport"
-                android:background="@drawable/register_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/labelPassport"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/labelTextSize"
-                    android:text="@string/valuePassport"
-                    android:gravity="center"
-                    android:layout_margin="@dimen/margin"
-                    android:textStyle="bold"/>
-
-                <EditText
-                    android:id="@+id/editPassport"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="@dimen/valueTextSize"
-                    android:inputType="number"
-                    android:hint="@string/passportHint"
-                    android:padding="@dimen/margin"
-                    android:gravity="center"
-                    android:layout_margin="@dimen/passportMargin"
-                    android:background="@drawable/edit_layout_box"/>
-
-            </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/layoutAlternativeContactNumber"

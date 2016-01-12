@@ -9,7 +9,13 @@
     <dimen name="margin">10dp</dimen>
     <dimen name="aadharMarginTop">20dp</dimen>
     <dimen name="aadharEditTextMargin">10dp</dimen>
+    <dimen name="ssnEditTextMargin">10dp</dimen>
     <dimen name="aadharEditTextMarginRight">3dp</dimen>
     <dimen name="passportMargin">10dp</dimen>
+    <dimen name="layoutMarginLeft">5dp</dimen>
+    <dimen name="layoutMarginRight">5dp</dimen>
+    <dimen name="layoutMarginTop">10dp</dimen>
+    <dimen name="mainActivityTextSize">20sp</dimen>
+    <dimen name="userDataMargin">5dp</dimen>
 
 </resources>
