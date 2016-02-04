@@ -20,59 +20,102 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:baselineAligned="false">
 
-            <TextView
-                android:id="@+id/textFirstName"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:id="@+id/textFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/userDataMargin"
+                        android:background="@drawable/text_view_layout"
+                        android:padding="@dimen/userDataMargin"
+                        android:textSize="@dimen/mainActivityTextSize"/>
+
+                    <TextView
+                        android:id="@+id/textLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/userDataMargin"
+                        android:padding="@dimen/userDataMargin"
+                        android:background="@drawable/text_view_layout"
+                        android:textSize="@dimen/mainActivityTextSize"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/userDataMargin"
+                        android:background="@drawable/person"
+                        android:contentDescription="@string/strImgPerson" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/editAddress1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/userDataMargin"
-                android:background="@drawable/text_view_layout"
                 android:padding="@dimen/userDataMargin"
+                android:inputType="textPostalAddress"
+                android:background="@drawable/text_view_layout"
                 android:textSize="@dimen/mainActivityTextSize"/>
 
-            <TextView
-                android:id="@+id/textLastName"
+            <EditText
+                android:id="@+id/editAddress2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/userDataMargin"
                 android:padding="@dimen/userDataMargin"
+                android:inputType="textPostalAddress"
                 android:background="@drawable/text_view_layout"
                 android:textSize="@dimen/mainActivityTextSize"/>
 
-            <TextView
-                android:id="@+id/textAddress1"
+            <EditText
+                android:id="@+id/editPIN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/userDataMargin"
                 android:padding="@dimen/userDataMargin"
+                android:inputType="number"
                 android:background="@drawable/text_view_layout"
                 android:textSize="@dimen/mainActivityTextSize"/>
 
-            <TextView
-                android:id="@+id/textAddress2"
+            <EditText
+                android:id="@+id/editAltCntNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/userDataMargin"
                 android:padding="@dimen/userDataMargin"
-                android:background="@drawable/text_view_layout"
-                android:textSize="@dimen/mainActivityTextSize"/>
-
-            <TextView
-                android:id="@+id/textAltCntNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/userDataMargin"
-                android:padding="@dimen/userDataMargin"
+                android:inputType="phone"
                 android:background="@drawable/text_view_layout"
                 android:textSize="@dimen/mainActivityTextSize"/>
 
 
-            <TextView
-                android:id="@+id/textEmail"
+            <EditText
+                android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/userDataMargin"
                 android:padding="@dimen/userDataMargin"
+                android:inputType="textEmailAddress"
                 android:background="@drawable/text_view_layout"
                 android:textSize="@dimen/mainActivityTextSize"/>
 

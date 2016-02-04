@@ -3,6 +3,7 @@ package com.surendra535268.customeronboard;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,13 +27,15 @@ public class RegisterCustomerActivity extends AppCompatActivity {
     EditText editSSN;
     EditText editPassport, editAltContNumber, editEmail;
 
-    ImageView imgIndia, imgOthers;
-
+    RadioButton radioButton;
+    RadioGroup radioGroup;
+    LinearLayout layoutAadhar;
     Button btnFetchDetails;
     Typeface tf, tfEdit;
     TextView textviewOR;
     ProgressDialog pDialog;
-    String editStrAadharNumber = "", editStrPassportNumber = "", editStrAltContNumber = "", editStrEmailAdd = "";
+    boolean isIndiaClicked = true, isOthersClicked = false;
+    String editStrAadharNumber = "", editStrSSN = "", editStrPassportNumber = "", editStrAltContNumber = "", editStrEmailAdd = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,7 @@ public class RegisterCustomerActivity extends AppCompatActivity {
 
         tf = Typeface.createFromAsset(getAssets(), "fonts/Sweetie.ttf");
         tfEdit = Typeface.createFromAsset(getAssets(), "fonts/calibri.ttf");
-
+        layoutAadhar = (LinearLayout) findViewById(R.id.layoutAadhar);
         editAadharPart1 = (EditText) findViewById(R.id.editAadharPart1);
         editAadharPart2 = (EditText) findViewById(R.id.editAadharPart2);
         editAadharPart3 = (EditText) findViewById(R.id.editAadharPart3);
@@ -80,31 +86,65 @@ public class RegisterCustomerActivity extends AppCompatActivity {
         btnFetchDetails = (Button) findViewById(R.id.btnFetchDetails);
         btnFetchDetails.setTypeface(tf);
 
+        radioGroup = (RadioGroup) findViewById(R.id.radioCountry);
+
+        isIndiaClicked = true;
+        editSSN.setVisibility(View.GONE);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                // find which radio button is selected
+                if(checkedId == R.id.radioIndia) {
+                    isIndiaClicked = true;
+                    isOthersClicked = false;
+                    editSSN.setVisibility(View.GONE);
+                    layoutAadhar.setVisibility(View.VISIBLE);
+                }else {
+                    isOthersClicked = true;
+                    isIndiaClicked = false;
+                    layoutAadhar.setVisibility(View.GONE);
+                    editSSN.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         btnFetchDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                editStrAadharNumber = editAadharPart1.getText().toString() +
-                        editAadharPart2.getText().toString() +
-                        editAadharPart3.getText().toString() +
-                        editAadharPart4.getText().toString() + "-" +
-                        editAadharPart5.getText().toString() +
-                        editAadharPart6.getText().toString() +
-                        editAadharPart7.getText().toString() +
-                        editAadharPart8.getText().toString() + "-" +
-                        editAadharPart9.getText().toString() +
-                        editAadharPart10.getText().toString() +
-                        editAadharPart11.getText().toString() +
-                        editAadharPart12.getText().toString();
+                if (isIndiaClicked) {
+
+                    editStrAadharNumber = editAadharPart1.getText().toString() +
+                            editAadharPart2.getText().toString() +
+                            editAadharPart3.getText().toString() +
+                            editAadharPart4.getText().toString() + "-" +
+                            editAadharPart5.getText().toString() +
+                            editAadharPart6.getText().toString() +
+                            editAadharPart7.getText().toString() +
+                            editAadharPart8.getText().toString() + "-" +
+                            editAadharPart9.getText().toString() +
+                            editAadharPart10.getText().toString() +
+                            editAadharPart11.getText().toString() +
+                            editAadharPart12.getText().toString();
+
+                }else if(isOthersClicked) {
+
+                    editStrSSN = editSSN.getText().toString();
+                }
+
 
                 editStrPassportNumber = editPassport.getText().toString();
 
                 editStrAltContNumber = editAltContNumber.getText().toString();
                 editStrEmailAdd = editEmail.getText().toString();
 
-                if(editStrAadharNumber.length() == 0 && editStrPassportNumber.length() == 0 ) {
-                    Toast.makeText(RegisterCustomerActivity.this, "Enter Aadhar or Passport number", Toast.LENGTH_LONG).show();
-                }else if(editStrAadharNumber.length() !=0 && editStrAadharNumber.length() != 14){
+                if(isIndiaClicked && editStrAadharNumber.length() == 0 && editStrPassportNumber.length() == 0 ) {
+                    Toast.makeText(RegisterCustomerActivity.this, "Please enter Aadhar or Passport number", Toast.LENGTH_LONG).show();
+                }else if(isOthersClicked && editStrSSN.length() == 0 && editStrPassportNumber.length() == 0 ) {
+                    Toast.makeText(RegisterCustomerActivity.this, "Please enter SSN or Passport number", Toast.LENGTH_LONG).show();
+                }else if(isIndiaClicked && editStrAadharNumber.length() !=0 && editStrAadharNumber.length() != 14){
                     Toast.makeText(RegisterCustomerActivity.this, "One or more fields of Aadhar number are empty", Toast.LENGTH_LONG).show();
                 }else if(editStrPassportNumber.length() !=0 && editStrPassportNumber.length() < 8){
                     Toast.makeText(RegisterCustomerActivity.this, "Enter proper passport number", Toast.LENGTH_LONG).show();
@@ -398,14 +438,14 @@ public class RegisterCustomerActivity extends AppCompatActivity {
         protected String doInBackground(String... f_url) {
 
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             }catch (Exception e){}
 
             status = 1;
             publishProgress();
 
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             }catch (Exception e){}
 
             return null;
@@ -416,17 +456,15 @@ public class RegisterCustomerActivity extends AppCompatActivity {
 
             if(status == 1)
                 pDialog.setMessage("Data fetched successfully...\nPlease validate your data!!");
-
         }
 
         // Once Music File is downloaded
         @Override
         protected void onPostExecute(String file_url) {
 
-
+            pDialog.dismiss();
             Intent i = new Intent(RegisterCustomerActivity.this, MainActivity.class);
             startActivity(i);
         }
     }
-
 }
